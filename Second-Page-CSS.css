@@ -1,0 +1,518 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body{
+	background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
+                       url('Music-Player-Image/marcela-laskoski-YrtFlrLo2DQ-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+.navigation-bar{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 20px;
+    padding-top: 8px;
+}
+.logo>div{
+	display: inline-block;
+	vertical-align: middle;
+}
+.website-logo img{
+    animation: logorotate 1s ease-in-out infinite ;
+}
+@keyframes logorotate{
+	100%{
+		transform: rotate(360deg);
+	}
+}
+.favs{
+    color: white;
+    animation: fav-rotate 1.5s ease-in-out infinite alternate-reverse;
+}
+@keyframes fav-rotate{
+	0% {
+		transform: scale(0.4);
+	}
+	50%{
+		transform: scale(1);
+	}
+	75%{
+		transform: scale(1);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+.search-bar{
+	width: 20%;
+	position: relative;
+}
+.search-bar input{
+	width: 100%;
+	text-decoration: none;
+	border: none;
+	text-align: center;
+	padding: 5px;
+	border-radius: 19px;
+	font-size: 1.1rem;
+	font-weight: 200;
+}
+.search-icon{
+	display: inline-block;
+    position: absolute;
+    color: gray;
+	top: 25%;
+	left: 2%;
+}
+.mic-icon{
+	display: inline-block;
+    position: absolute;
+	color:grey;
+	top: 22%;
+	right: 3%;
+}
+.notification{
+	animation: bell 1s ease-in-out infinite alternate-reverse;
+}
+@keyframes bell{
+	0%{
+		transform: rotate(45deg);
+	}
+	100%{
+		transform: rotate(-45deg);
+	}
+}
+.profile-picture img{
+	width: 55px;
+	height:55px;
+	border-radius: 100%;
+	object-fit: fill;
+}
+main{
+	width: 100%;
+	padding: 0 3%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+aside{
+	display: inline-block;
+	overflow: hidden;
+}
+.left-section{
+	width: 70%;
+	height: 81vh;
+	overflow: scroll;
+}
+.left-section::-webkit-scrollbar{
+	display: none;
+}
+.singer{
+	width: 100%;
+	height: 22vw;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	align-items: top;
+	box-sizing: border-box;
+	margin-bottom: 45px;
+	background-image: radial-gradient( circle farthest-corner at 83.7% 4.3%, 
+	                  rgba(173,0,171,1) 0%, rgba(15,51,92,1) 90% );
+}
+.singer-image {
+	height: 22vw;
+	width: 25vw;
+	background-image:url("Music-Player-Image/tylor-swift-profile.jpg");
+	background-size: cover;
+	background-position: center;
+}
+.singer-detail{
+	width: 67%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-right: 12px;
+	color: white;
+}
+#singer-name{
+	font-size: 1.7vw;
+	padding-left: 5px;
+}
+#follower{
+	position: absolute;
+     font-size: 1.3vw;
+	right: 2%;
+	top: 10%;
+	font-weight: 400;
+}
+#author{
+	font-size: 1.3rem;
+	padding-left: 10px;
+	padding-top: 2.5px;
+}
+#desc{
+	font-size: 1.1rem;
+	padding-left: 10px;
+	padding-top: 9px;
+}
+.btn button{
+	font-size: 1vw;
+	margin: 3% 3% 0% 1.5%;
+	width: 6.2vw;
+	height: 3vw;
+	color: white;
+	cursor: pointer;
+}
+.btn button:first-child {
+    background-image: linear-gradient(to right, #6a3093 0%, #a044ff  51%, #6a3093  100%);
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
+.btn button:last-child {
+    background-image: linear-gradient(to right, #ff6e7f 0%, #bfe9ff 51%, #ff6e7f 100%);
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 0 0 10px #eee;
+    border-radius: 10px;
+}
+.btn button:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+.action-part p{
+	font-size: 1vw;
+	padding-top: 1rem;
+	padding-left: 10px;
+}  
+.playlist-item{
+	height: 8vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15px;
+	background-image: radial-gradient( circle farthest-corner at 83.7% 4.3%, 
+	                  rgba(173,0,171,1) 0%, rgba(15,51,92,1) 90% );
+}
+.left {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	width: 30%;
+	height: 100%;
+	padding: 0% 1%;
+	font-size: 15px;
+	color: darkgray;
+	
+}
+/* center part of the playlist item which contains the duration length of the song */
+.center {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	font-size: 15px;
+	color: darkgray;
+}
+/* right part of the playlist item, which contains icons */
+.right {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 50px;
+	height: 100%;
+	padding-right: 2%;
+	color: darkgray;
+}
+.add-to-fav{
+	position: relative;
+
+}
+.add-favourte{
+	position: absolute;
+	opacity: 0;
+	width: 0px;
+	height: 0px;
+	top: 20px;
+	right: 0px;
+	overflow: hidden;
+	border: 1px solid black;
+	box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.5);
+	transition: all ease-in-out 0.3s;
+	background-color: white;
+	color: black;
+}   
+input[type="checkbox"] {
+	display: none;
+}   
+input[type="checkbox"]:checked ~.add-favourte{
+	width: max-content;
+	height: auto;
+	opacity: 1;
+	padding: 6px;
+}  
+.fa-plus{
+	cursor: pointer;
+	color: skyblue;
+}
+.right div:nth-child(2) {
+	margin-left: 27%;
+}
+.song-image {
+	height: 90%;
+	min-width: 50px;
+	max-width: 50px;
+	margin: 0px 12% 0px 12%;
+	position: relative;
+	transition: all ease-in-out 0.5s;
+}
+.song-image img {
+	width: 100%;
+	height: 100%;
+
+}
+.play-btn{
+	position: absolute;
+	top: 40%;
+	left: 40%;
+	opacity: 0;
+	transition: all ease-in-out 0.5s;
+}
+.song-image:hover .play-btn{
+     opacity: 1;
+     color: white;
+ 
+}
+.song-image img:hover{
+	opacity: 0.7;
+	transform: scale(0.87);
+}
+.right-section {
+	width: 28%;
+	height: 81vh;
+}
+.section-heading {
+	display: flex;
+	justify-content: space-between;
+
+	margin-top: 10px;	
+	margin-bottom: 12px;
+}
+/* adjusting for side by side display */
+.section-heading div,
+.section-heading h1 {
+	display: inline-block;
+}
+.section-heading h1 {
+	font-size: 23px;
+	color: white;
+
+}
+.section-heading div {
+	font-size: 14px;
+	color: white;
+}
+.list{
+	height: 36vh;
+	overflow: scroll;
+    display: flex;
+	flex-direction: column;
+	margin-bottom: 15px;
+}
+.list::-webkit-scrollbar{
+	display: none;
+}
+.list-item{
+	color: white;
+    height: 13vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 9px;
+	position: relative;
+	transition: all ease-in-out 0.1s;
+}
+.list-item>div{
+	display: inline-block;
+}
+.more-Singer img{
+	width: 6.5vw;
+	height: 6.5vw;
+	object-fit: fill;
+}
+.singer-name{
+	position: absolute;
+	top:2vw;
+	left: 7vw;
+	color: white;
+	align-items: center;
+}
+.play-btn-2{
+	width: 2vw;
+	height: 2vw;
+	background-color: white;
+	border-radius: 50%;
+	cursor: pointer;
+	font-size: 1vw;
+	position: absolute;
+	top:2.1vw;
+	left: 2.4vw;
+	opacity: 0;
+	transition: all ease-in-out 0.1s;
+	color: red;
+}
+.fa-play{
+	position: absolute;
+	top:0.55vw;
+	left: 0.7vw;
+}
+.list-item:hover .play-btn-2{
+	opacity: 1;
+}
+.list-item:hover .more-Singer img{
+	opacity: 0.7;
+	background-color: linear-gradient(to bottom,transparent,rgba(20, 27, 65, 1));
+}
+.list-item:hover{
+	box-shadow: 0px 0px 10px 1px white;
+}
+.list .playlist-item{
+	height: 10vh;
+	display: flex;
+	justify-content: space-between;
+}
+.recently-song-img img{
+	width: 4vw;
+	height: 4vw;
+	object-fit: fill;
+	padding: 2px 0px;
+}
+.list .playlist-item .left>div{
+     margin-left: 8px;
+}  
+.playlist-item:hover {
+	box-shadow: 0px 0px 10px 1px white;
+
+}
+.playlist-item:hover .fa-heart{
+       color: red;
+	transform: scale(1.3);
+}
+footer {
+	position: fixed;
+	bottom: 1px;
+	width: 100%;
+	height: 60px;
+	background-color: #282828;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: center;
+	flex-wrap: nowrap;
+	padding: 0px 3%;
+	z-index: 6;
+	color: darkgray;
+}
+.currently-playsong{
+	width: 23vw;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+      flex-wrap: wrap;
+     margin-left: 2vw;
+}
+#currently-playsong-image img{
+    width: 55px;
+    height: 55px;
+    object-fit: fill;
+    padding-top:3px ;
+    border: 1px solid rgba(120,120,120,0.4);
+    box-shadow: 1px  1px rgba(120,120,120,0.6);
+}
+.currently-playsong-name div:nth-child(1){
+	font-size: 18px;
+}
+.currently-playsong-name div:nth-child(2){
+	font-size: 13px;
+	text-align: center;
+}
+.fa-heart:hover{
+	color: red;
+	transform: scale(1.2);
+}
+.player{
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.controls{
+	padding-top: 5px;
+	width: 40%;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.controls div{
+	font-size: 1.4rem;
+	color: white;
+}
+.slider{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.slider>div{
+	display: inline-block;
+}
+.slider #myRange{
+	width:35vw ;
+}
+#myRange{
+	background: #d3d3d3;
+	opacity: 0.7;
+	width: 100%;
+}
+.time{
+	color: darkgray;
+	font-size: 14px;
+	margin: 0px 10px;
+}
+.extras{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   width: 20vw;
+}
+
+

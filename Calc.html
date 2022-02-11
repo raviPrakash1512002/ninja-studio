@@ -1,0 +1,145 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		h1,div{
+			text-align: center;
+			margin: 50px auto;
+		}
+	    #toggle{
+	    	width: 75px;
+	    	height: 30px;
+	        border: 2px solid #2b2b2b;
+	        position: relative;
+	        border-radius: 20px;
+	        transition: 0.5s;
+	        cursor: pointer;
+        }
+        #toggle .slider{
+        	position: absolute;
+        	width: 25px;
+        	height: 25px;
+        	background-color: #2b2b2b;
+        	left: 1px;
+        	top: 0.5px;
+        	bottom: 0.5px;
+        	border-radius: 50%;
+        	transition: 0.5s;
+        }
+        #toggle.active .slider{
+            left: 45px;
+        }
+        #toggle.active{
+        	background-color:white;
+        }
+		
+	</style>
+</head>
+<body>
+	<div id="toggle">
+		<span class="slider"></span>
+	</div>
+	<h1>
+		Click On the toggle button!!!
+	</h1>
+	<script type="text/javascript">
+		 const body=document.getElementsByTagName('body');
+		 const head=document.getElementsByTagName('h1');
+	    const toggle=document.getElementById('toggle');
+		toggle.onclick=function(){
+			toggle.classList.toggle('active');
+			if(body[0].style.backgroundColor != "black"){
+                   body[0].style.backgroundColor = "black";
+                   head[0].style.color = "white";
+
+			}
+			else{
+				 body[0].style.backgroundColor = "white";
+				 head[0].style.color = "black";
+			}
+
+		}
+	</script>
+</body>
+</html> -->
+<!-------------------------------------------->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+        }
+        body{
+        	display: flex;
+        	justify-content: center;
+        	align-items: center;
+        	min-height: 100vh;
+        }
+        #outer-box{
+        	width: 250px;
+            height: 250px;
+        	background-color: violet;
+        	border-radius: 50%;
+        	position: relative;
+
+        }
+        #inner-box{
+        	width: 170px;
+        	height: 170px;
+        	background-color: cyan;
+        	position: absolute;
+        	left: 39px;
+        	top: 40px;
+        	/*clip-path: polygon(50% 0%, 0% 100%, 100% 100%);*/
+        
+        }
+        button[type="checkbox"]{
+        	display: block;
+            margin: 30px auto;
+            width: 150px;
+            height:30px;
+            background-color: brown;
+            font-size: 1.1rem;
+            color: white;
+        }
+	</style>
+</head>
+<body>
+	<div>
+		<div id="outer-box">
+			<div id="inner-box"></div>
+		</div>
+		<button type="checkbox" id="change-color">Change Color</button>
+		<button type="checkbox" id="change-shape">Change Shape</button>
+	</div>
+	<script type="text/javascript">
+		var colorArray=["red","blue","pink","orange","green","yellow"];
+		var shapeArray=["polygon(50% 0%, 0% 100%, 100% 100%)","polygon(50% 0%, 100% 38%, 82% 100%,18% 100%, 0% 38%)","polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)","circle(50% at 50% 50%)"];
+		const button=document.getElementsByTagName('button');
+		button[0].onclick=function(){
+			let randomColorChange = colorArray[Math.floor(Math.random()*colorArray.length)];
+             document.getElementById('outer-box').style.backgroundColor=randomColorChange;
+		}
+		button[1].onclick=function(){
+			let randomShapeChange = shapeArray[Math.floor(Math.random()*shapeArray.length)];
+             document.getElementById('inner-box').style.clipPath=randomShapeChange;
+		}
+
+	</script>
+
+</body>
+</html>

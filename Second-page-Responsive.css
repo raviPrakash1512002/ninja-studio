@@ -1,0 +1,133 @@
+@media screen and (max-width: 1100px){
+   .favs {
+		display: none !important;
+	}
+	/* reduced size of search bar */
+	.search-bar {
+		width: 30%;
+	}
+	input {
+		font-size: 11px !important;
+	}
+   .singer{
+   	height: 30vw;
+   }
+   .singer-image{
+   	   height: 100%;
+   }
+}
+@media screen and (max-width: 950px){
+	main{
+		flex-direction: column;
+	}
+	aside{
+	    overflow: hidden;
+    }
+    .left-section{
+	    width: 100%;
+	    height: auto;
+	    overflow: visible;
+    }
+    .singer{
+	   width: 100%;
+	   height: 40vw;
+	}
+    .singer-image {
+	   width: 35vw;
+	}
+    #singer-name{
+	   font-size: 3.2vw;
+	}
+    #follower,#desc,#author,.action-part p{
+	   font-size: 2.2vw;
+	}
+	.btn button{
+	   font-size: 2.2vw;
+       width: 15vw;
+	   height: 7vw;
+    }
+    .right-section {
+	    width: 100%;
+	    height: auto;
+	    overflow: visible;
+    }
+    .list{
+	   height: auto;
+	   overflow: visible;
+	}
+    .list-item{
+       height: 17vw;
+
+	}
+   .more-Singer img{
+	   width: 16vw;
+	   height: 100%;
+    }
+    .singer-name{
+	   top:5.8vw;
+	   left: 19vw;
+    }
+    .play-btn-2{
+	    width: 5vw;
+	    height: 5vw;
+	    font-size: 2vw;
+        top:5vw;
+	    left: 5vw;
+	}
+    .fa-play{
+	   top:1.7vw;
+	   left: 1.7vw;
+    }
+    .recently-song-img img{
+	   width: 10.5vw;
+	   height: 10.5vw;
+	   min-height: 70px;
+	   min-width: 70px;
+    }
+}
+@media screen and (max-width: 700px) {
+	
+	/* footer section */
+	.controls>div:nth-child(1),.controls>div:last-child{
+		display: none;
+
+	}
+	.extras > div:nth-child(3) {
+		display: none;
+	}
+	.extras > div:nth-child(4) {
+		display: none;
+	}
+}
+@media screen and (max-width: 550px) {
+	/* navigation bar section */
+	/* website image */
+	.website-logo img {
+		height: 30px;
+		width: 30px;
+	}
+	/* website name */
+	.website-name h1 {
+		font-size: 3vw;
+	}
+	/* website name */
+	.website-name h4 {
+		font-size: 2vw;
+	}
+	/* notification bell */
+	.notification-bell img {
+		width: 20px;
+		height: 20px;
+	}
+	/* profile picture */
+	.profile-picture img {
+		width: 30px;
+		height: 30px;
+	}
+	/* notification bell and profile picture */
+	.notification-bell,
+	.profile-picture {
+		margin-top: 8px;
+	}
+
+}	
